@@ -1,10 +1,10 @@
-import logo from './logo.svg';
+import splash from './splash.png';
 import './App.css';
 import Problem from './components/Problem'
 import { useEffect, useState } from 'react';
 import Tags from './components/Tags'
 import Problemanalytics from './components/Problemanlytics';
-
+import Contests from './components/Contests';
 function App() {
   const [loaded, setloaded] = useState(true)
   const [searched, setsearched] = useState(false)
@@ -32,19 +32,24 @@ function App() {
     setsearched(true)
     loaddata(username)
   }
-  const loading = <div class="loader-wrapper">
-    <span class="loader"><span class="loader-inner"></span></span>
+  const loading = <div className="loader-wrapper">
+    <span className="loader"><span className="loader-inner"></span></span>
   </div>
   const temp1 = <div className="usernameinput">
     <label style={{ fontSize: "30px", margin: "10px" }}>Username: </label>
     <input type="text" onChange={handleChange} style={{ fontSize: "25px" }}></input>
-    <button onClick={handleSearch} style={{ fontSize: "25px", margin: "10px" }}>search</button>
+    <button onClick={handleSearch} style={{ fontSize: "25px", margin: "10px", borderRadius: "10px", borderColor: "#33ccff" }}>search</button>
   </div>
   const temp2 = <div >
     < Tags data={problems} ></Tags>
-    <div className="problemanalysisbox">
+    <div className="analysisbox">
       {
         <Problemanalytics data={problems}></Problemanalytics>
+      }
+    </div>
+    <div className="chartbox">
+      {
+        <Contests name={username}></Contests>
       }
     </div>
   </div>
@@ -52,10 +57,9 @@ function App() {
   return (
     <div className="App">
       {temp1}
-      {searched ? (loaded ? temp2 : loading) : <div />}
-
-
-
+      {searched ? (loaded ? temp2 : loading) : <div className="splash">
+        <img width="900px" src={splash}></img>
+      </div>}
     </div>
   );
 }
