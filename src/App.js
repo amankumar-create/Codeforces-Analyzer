@@ -17,6 +17,7 @@ function App() {
   var loaddata = async function loadData(username) {
     var url = `https://codeforces.com/api/user.status?handle=${username}&from=1&count=5000`
     var response = await fetch(url)
+    console.log(response)
     var data = await response.json()
     setproblems(data.result)
     setloaded(true)

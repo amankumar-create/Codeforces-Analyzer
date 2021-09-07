@@ -93,28 +93,35 @@
  .analysisbox{
    position: relative;
     float: none;
-    margin: 0 auto;
-    width: 100%;
-
+     margin: 0 auto;
+    width: fit-content;
+   
+    padding: 30px;
+     
     display: flex;
     justify-content: center;
     align-items: center;
  }
  .indexbox{
-width: 900px;
+    width: 950px;
     height: fit-content;
-    border:solid rgb(0, 251, 255) 3px;
-    border-radius: 20px;
+    
     display: inline-block;
     margin:1%;
+    border:solid rgb(0, 251, 255) 3px;
+    border-radius: 20px;
+ 
+    
  }
  .ratingbox{
-    width: 1000px;
+     width: 950px;
     height: fit-content;
-    border:solid rgb(0, 251, 255) 3px;
-    border-radius: 20px;
+    
     display: inline-block;
     margin:1%;
+    border:solid rgb(0, 251, 255) 3px;
+    border-radius: 20px;
+    
  }
  .splash{
    position: relative;
